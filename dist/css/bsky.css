@@ -1,0 +1,46 @@
+.main-footer-fixed{
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 10000;
+    bottom: 0;
+}
+.main-footer .footer-tools {
+    float: right;
+    display: inline-block;
+	margin-left: 50px;
+}
+.main-footer .footer-tools .go-top {
+    background-color: #666666;
+}
+.main-footer .footer-tools .go-top:hover {
+    background-color: #4f4f4f;
+}
+.main-footer .footer-tools .go-top i {
+    color: #aaaaaa;
+}
+.main-footer .footer-tools .go-top {
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+    margin-top: -2px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    font-size: 16px;
+    padding: 0px 6px 0px 6px;
+}
+
+.scroll-bar::-webkit-scrollbar {/*滚动条整体样式*/
+        width: 6px;     /*高宽分别对应横竖滚动条的尺寸*/
+        height: 1px;
+    }
+.scroll-bar::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+        border-radius: 6px;
+         -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+        background: #535353;
+    }
+.scroll-bar::-webkit-scrollbar-track {/*滚动条里面轨道*/
+        -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+        border-radius: 6px;
+        background: #EDEDED;
+    }
