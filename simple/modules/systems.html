@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+	<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdn.bootcss.com/datatables/1.10.16/css/dataTables.bootstrap.min.css" rel="stylesheet">
+	
+  
+  <!-- Font Awesome -->
+  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <!-- Ionicons -->
+  <link href="https://cdn.bootcss.com/ionicons/4.1.2/css/ionicons.min.css" rel="stylesheet">
+   
+  </head>
+  <body>
+    <div id="page-wrapper">
+		<div class="row">
+			<div class="col-lg-12">
+			<div class="panel panel-default">
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="dataTable_wrapper">
+                            	 <div style="float:left" class="form-group form-inline">
+	                        		<input id="share-name" name="name" class="form-control" placeholder="标题" style="width: 120px"/>
+	                        		<input type="text" id="start-date" placeholder="发表起时" class="form-control itrue-date " style="width: 100px">
+									<input type="text" id="end-date" placeholder="发表止时" class="form-control itrue-date" style="width: 100px">
+                            		<input type="hidden" id="search-btn-push" value=""/>
+										<div class="btn-group" id="search-btn-group_push">
+		                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span>推送</span><span class="caret"></span></button>
+		                                    <ul class="dropdown-menu pull-right" role="menu">
+		                                        <li><a href="#" ref="" class="pushStatus">全部</a></li>
+		                                        <li class="divider"></li>
+		                                        <li><a href="#" ref="0" class="pushStatus">未推送</a></li>
+		                                        <li><a href="#" ref="1" class="pushStatus">推送</a></li>
+		                                    </ul>
+		                                </div>
+                            		<input type="hidden" id="search-btn-published" value=""/>
+										<div class="btn-group" id="search-btn-group_published">
+		                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span>发布</span><span class="caret"></span></button>
+		                                    <ul class="dropdown-menu pull-right" role="menu">
+		                                        <li><a href="#" ref="" class="publishStatus">全部</a></li>
+		                                        <li class="divider"></li>
+		                                        <li><a href="#" ref="0" class="publishStatus">未发布</a></li>
+		                                        <li><a href="#" ref="1" class="publishStatus">发布</a></li>
+		                                    </ul>
+		                                </div>
+                            		<input type="hidden" id="search-btn-label" value=""/>
+										<div class="btn-group" id="search-btn-group_label">
+		                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span>标签</span><span class="caret"></span></button>
+		                                    <ul class="dropdown-menu pull-right" role="menu">
+		                                        <li><a href="#" ref="" class="labelStatus">全部</a></li>
+		                                        <li class="divider"></li>
+		                                        <li><a href="#" ref="1" class="labelStatus">荐</a></li>
+		                                        <li><a href="#" ref="2" class="labelStatus">热</a></li>
+		                                        <li><a href="#" ref="3" class="labelStatus">广告</a></li>
+		                                        <li><a href="#" ref="4" class="labelStatus">推广</a></li>
+		                                    </ul>
+		                                </div>
+                            		<input type="hidden" id="search-btn-seq" value=""/>
+										<div class="btn-group" id="search-btn-group_seq">
+		                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span>次序</span><span class="caret"></span></button>
+		                                    <ul class="dropdown-menu pull-right" role="menu">
+		                                        <li><a href="#" ref="" class="seqStatus">全部</a></li>
+		                                        <li><a href="#" ref="1" class="seqStatus">次序</a></li>
+		                                    </ul>
+		                                </div>
+                            		<a type="button" id="searchBtn"  class="btn btn-outline btn-default">搜索</a>
+	                        	</div> 
+	                        	 <div class="btn-group pull-right" role="group" aria-label="...">
+								  <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span> 新增</button>
+								   <div class="btn-group" role="group">
+									<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									  <span class="glyphicon glyphicon-edit"></span> 审核
+									  <span class="caret"></span>
+									</button>
+									<ul class="dropdown-menu">
+									  <li><a href="#">通过</a></li>
+									  <li><a href="#">不通过</a></li>
+									</ul>
+								  </div>
+								  <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span> 编辑</button>
+								 <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-trash"></span> 删除</button>
+								</div>
+	                        	<div class="clear"></div>
+                                <table class="table table-striped table-bordered table-hover" id="dataTables-share">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 25%">标题</th>
+                                            <th style="width: 7%">状态</th>
+                                            <th style="width: 7%">标签</th>
+                                            <th style="width: 7%">次序</th>
+                                            <th style="width: 15%">创建时间</th>
+                                            <th style="width: 15%">发表时间</th>
+                                            <th style="width: 10%">发布人</th>
+                                            <th style="width: 12%">功能操作</th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+			</div>
+		</div>
+	</div>
+
+	<!-- add -->
+		<div class="modal fade" id="myModal"  role="dialog" data-keyboard="false" data-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true">
+    		<div class="modal-dialog" style="width:850px; height: auto; margin: auto;">
+       			<div class="modal-content">  
+           		</div> 
+    		</div>
+		</div>
+		
+		<!-- edit -->
+		<div class="modal fade" id="seqModal"  role="dialog" data-keyboard="false" data-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true">
+    		<div class="modal-dialog" style="width:550px; height: auto; margin: auto; margin-top: 100px">
+       			<div class="modal-content">
+       				<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title" id="myModalLabel">设置显示次序</h4>
+					</div>
+					<div class="modal-body" style="height: auto; overflow: hidden;">
+						<form role="form" class="form-horizontal" id="seqform" action="${ctx}/share/setseq" method="post" accept-charset="utf-8">
+							<div class="form-group">
+								<label class="col-sm-2 control-label">次序</label>
+								<div class="col-sm-8">
+									<input class="form-control" id="share_seq" name="seq" placeholder="次序" type="text" /> 
+									<p class="help-block">该是显示在App的ListView列表中的顺序</p>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+						<button type="button" id="setseqBtn" class="btn btn-primary">设置</button>
+					</div>
+           		</div> 
+    		</div>
+		</div>
+<!-- comment window -->
+		<div class="modal fade" id="commentModal"  role="dialog" data-keyboard="false" data-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true">
+    		<div class="modal-dialog" style="width:550px; height: auto; margin: auto; margin-top: 100px">
+       			<div class="modal-content">
+       				<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title" id="myModalLabel">评论</h4>
+					</div>
+					<div class="modal-body" style="height: auto; overflow: hidden;">
+						<form role="form" class="form-horizontal" id="commentform" action="${ctx}/share/savecmt" method="post" accept-charset="utf-8">
+							<div class="form-group">
+								<label class="col-sm-2 control-label">评论人</label>
+								<div class="col-sm-4">
+									<input id="comment_user" type="hidden" name="creator" class="from-control" placeholder="选择发表人" style="width: 100%" value="${share.senderUser}" />
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-2 control-label">评论内容</label>
+								<div class="col-sm-8">
+									<textarea class="form-control" name="comment" placeholder="评论内容" type="text" /></textarea>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" id="comment-submit">提交</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+					</div>
+           		</div> 
+    		</div>
+		</div>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- FastClick -->
+<script src="https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
+<script src="https://cdn.bootcss.com/datatables/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.bootcss.com/datatables/1.10.16/js/dataTables.bootstrap.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/2.3.1/js/bootstrap-tooltip.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap-confirmation/1.0.7/bootstrap-confirmation.min.js"></script>
+<script src="../jquery.mockjax.js"></script>
+<script src="mockjax.js"></script>
+<script src="main.js"></script>
+  </body>
+</html>

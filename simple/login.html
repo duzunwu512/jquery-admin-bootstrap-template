@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>DTX管理平台</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">  
+  <link href="https://cdn.bootcss.com/ionicons/4.1.2/css/ionicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+  <link rel="stylesheet" href="dist/css/dtx.css">
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body class="hold-transition login-page">
+<div class="login-box"  >
+  <div class="login-logo">
+    <b style="font-size: 25px;">DTX分布式事务管理平台</b>
+  </div>
+  <!-- /.login-logo -->
+  <div class="login-box-body">
+      <p class="login-box-msg">管理员登录</p>
+      <div class="form-group has-feedback">
+          <input type="text" class="form-control" placeholder="账号">
+          <span class="glyphicon glyphicon-user form-control-feedback"></span>
+      </div>
+      <div class="form-group has-feedback">
+          <input type="password" class="form-control"placeholder="密码">
+          <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+      </div>
+      <div class="form-group has-feedback">
+          <input type="text" class="form-control" placeholder="验证码">
+          <span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+      </div>
+      <div class="form-group has-feedback">
+          <img alt="如果看不清楚，请单击图片刷新！" class="pointer" >
+          &nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:;">点击刷新</a>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-8">
+          <div class="checkbox icheck">
+          </div>
+        </div>
+        <!-- /.col -->
+        <div class="col-xs-4">
+          <button type="button" class="btn btn-primary btn-block btn-flat" id="loginBtn" >登录</button>
+        </div>
+        <!-- /.col -->
+      </div>
+    <!-- /.social-auth-links -->
+
+  </div>
+  <!-- /.login-box-body -->
+</div>
+<!-- /.login-box -->
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="jquery.mockjax.js"></script>
+<script src="mockjax.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#loginBtn").on("click", function(){
+			location.href="index.html";
+		});
+	});
+</script>
+</body>
+</html>
